@@ -28,18 +28,22 @@ public class Todo {
     @ManyToOne(fetch = FetchType.LAZY)
     private Member member;
 
-    @Column(name = "todo_watch", columnDefinition = "tinyint(1)")
-    private boolean watch;
+    //@Column(name = "todo_watch", columnDefinition = "tinyint(1)")
+    //private boolean watch;
 
-    @Column(name = "todo_delete", columnDefinition = "tinyint(1)")
-    private boolean delete;
+    //@Column(name = "todo_delete", columnDefinition = "tinyint(1)")
+    //private boolean delete;
 
     @Builder
     public Todo(String content, boolean isChecked, Member member) {
         this.content = content;
         this.isChecked = isChecked;
         this.member = member;
-        this.watch = false;
-        this.delete = false;
+        //this.watch = false;
+        //this.delete = false;
+    }
+
+    public void updateContent(String newContent){
+        this.content = newContent;
     }
 }
